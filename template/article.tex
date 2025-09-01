@@ -174,7 +174,7 @@ research based on morphometric data. Some of the most notable include:
 \end{itemize}
 
 These projects not only define standards for data acquisition and processing but also provide accessible databases,
-analysis tools, and software environments (e.g., FreeSurfer, FSL, BrainSuite), enabling researchers worldwide to
+analysis tools, and software environments (e.g., FreeSurfer \cite{caser_2024}, FSL, BrainSuite), enabling researchers worldwide to
 reproduce reconstructions and conduct comparative studies.
 
 However, despite these achievements, a critical evaluation of the employed methodologies remains essential — from
@@ -362,7 +362,7 @@ Thus, a general workflow (processing pipeline) of SBM can be outlined as follows
     between gyri or holes within sulcal surfaces. A specialized approach is applied in which the surface is mapped onto
     a spherical model \cite{fischl_1999}, enabling straightforward detection and localization of such topological
     errors. The mapping can be performed either by inflating the cortical surface until it approximates a sphere, or
-    conversely, by deflating the spherical model until it conforms to the pial surface.
+    conversely, by deflating the spherical model until it conforms to the pial surface \cite{fischl_2001, dale_1999}.
 
     \begin{figure}[H]
         \centering
@@ -494,7 +494,7 @@ context of cortical analysis \cite{evans_2015, friston_2004, voets_2008, lai_202
 
 Thus, VBM does not utilize information about the specific shape of brain structures—only about their density and
 volume. It may be susceptible to errors from inaccurate normalization or segmentation and relies on mass univariate
-testing that ignores inter-regional dependencies.
+testing that ignores inter-regional dependencies \cite{ashburner_2000, mechelli_2005, callaert_2014}.
 
 In contrast, SBM, due to its superior handling of cortical topology and geometry, more precise spatial registration,
 and greater sensitivity to subtle morphometric changes, is considered the preferred method for detailed analysis of
