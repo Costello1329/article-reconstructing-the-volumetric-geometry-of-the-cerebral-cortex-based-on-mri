@@ -157,8 +157,9 @@ research based on morphometric data. Some of the most notable include:
     resolution of up to 0.7 mm3 \cite{van_2013}.
     
     \item Brainnetome Project — a Chinese initiative that has developed a functional-anatomical parcellation of the
-    brain based on MRI and connectivity data. Brainnetome provides a detailed database with high-precision
-    reconstructions of cortical and subcortical structures and their connections \cite{jiang_2013, hohnson_2016}.
+    brain based on MRI and connectivity data \cite{milton_2021}. Brainnetome provides a detailed database with
+    high-precision reconstructions of cortical and subcortical structures and their connections
+    \cite{jiang_2013, hohnson_2016}.
     
     \item CHIMGEN (China Imaging Genetics Project) — a Chinese project that employs structural and functional
     neuroimaging, genetic analysis, and psychometric testing to build brain models that account for both genetic and
@@ -169,13 +170,13 @@ research based on morphometric data. Some of the most notable include:
     tools, and the application of AI for neural structure analysis (Kawato, 2015).
     
     \item COCORO (Cognitive Genetics Collaborative Research Organization) — a Japanese multicenter project focusing on
-    cognitive disorders and the reconstruction of cortical morphology in patients with psychoses, schizophrenia, and
-    bipolar disorder \cite{koshiyama_2022}.\newline
+    cognitive disorders and the reconstruction of cortical morphology in patients with psychoses, schizophrenia
+    \cite{madeira_2020}, and bipolar disorder \cite{koshiyama_2022}.\newline
 \end{itemize}
 
 These projects not only define standards for data acquisition and processing but also provide accessible databases,
-analysis tools, and software environments (e.g., FreeSurfer \cite{caser_2024}, FSL, BrainSuite), enabling researchers worldwide to
-reproduce reconstructions and conduct comparative studies.
+analysis tools, and software environments (e.g., FreeSurfer \cite{caser_2024}, FSL, BrainSuite), enabling researchers
+worldwide to reproduce reconstructions and conduct comparative studies.
 
 However, despite these achievements, a critical evaluation of the employed methodologies remains essential — from
 voxel- and surface-based morphometry to more complex probabilistic models based on machine learning and deep learning.
@@ -219,7 +220,7 @@ high-precision models that are becoming increasingly relevant with the integrati
 technologies into medicine. The reliability of such models depends on the accuracy of morphometric analysis, the
 quality of input data, and the correctness of the algorithms used. Therefore, the development and evaluation of
 morphometric methods is a critical task not only for neuroscience but also for the entire biomedical technology
-industry.
+industry \cite{marteua_2024, xiong_2023}.
 
 This article reviews the principal approaches to cortical brain morphometry: voxel-based and surface-based, as well as
 the data quality criteria and processing pipelines that determine the reliability of cortical reconstruction results.
@@ -263,7 +264,7 @@ bypassing the surface reconstruction stage that is characteristic of surface-bas
 \subsection{Surface-Based Morphometry}
 Surface-Based Morphometry (SBM) is an MRI analysis approach focused on the geometry and metrics of the cortical
 surface. There are several key variations and techniques implementing SBM, differing in analytical goals, types of
-metrics, and underlying algorithms.
+metrics, and underlying algorithms \cite{riccelli_2017}.
 
 SBM is frequently employed for morphometric reconstruction. For instance, study \cite{desikan_2006} describes the use
 of this approach for automated segmentation of the cerebral cortex based on structural magnetic resonance imaging data.
@@ -275,8 +276,8 @@ In SBM, cortical surface reconstruction is performed such that each MRI volume i
 ("unfolded") surface of the brain, allowing access to structures typically hidden within sulci and gyri. A critical
 requirement for the input images is high spatial resolution (approximately 1 mm voxel size), minimal motion artifacts,
 and clear contrast between gray and white matter. Cortical surfaces are matched to one another via mapping to a
-spherical template, followed by automatic registration based on curvature and the geometry of sulcal and gyral
-patterns.
+spherical template \cite{fujita_2019}, followed by automatic registration based on curvature and the geometry of sulcal
+and gyral patterns \cite{li_2023}.
 
 The outputs of the SBM approach are anatomically accurate maps delineating cortical regions of interest, each
 corresponding to specific gyri or sulci. In \cite{desikan_2006}, 34 such regions were automatically labeled in each
@@ -375,7 +376,7 @@ Thus, a general workflow (processing pipeline) of SBM can be outlined as follows
 
     The identified defects are then corrected using local algorithms that take into account the intensity profile of
     the original MRI image, allowing for the restoration of correct surface topology without the loss of meaningful
-    cortical regions.
+    cortical regions \cite{acosta_2012}.
 
     \item Once a topologically correct inner surface of the brain has been obtained, the outer (pial) surface —
     representing the external boundary of the gray matter — is reconstructed. This is achieved by progressively
@@ -423,9 +424,10 @@ Below are the main parameters and metrics analyzed using SBM:\newline
     
     \item Surface area - reflects both the developmental and individual characteristics of the brain structure.
     
-    \item Gyrification index — quantifies the degree of cortical folding and is calculated as the ratio of the total
-    pial (folded) surface area to the area of its convex hull: $GI = \frac{A}{A_{\text{conv}}}$ \cite{zilles_1988}.
-    This index is particularly relevant in studies of brain development and psychiatric disorders \cite{goto_2022}.
+    \item Gyrification index \cite{madeira_2020} — quantifies the degree of cortical folding and is calculated as the
+    ratio of the total pial (folded) surface area to the area of its convex hull: $GI = \frac{A}{A_{\text{conv}}}$
+    \cite{zilles_1988}. This index is particularly relevant in studies of brain development and psychiatric disorders
+    \cite{goto_2022}.
     
     \item Curvature — describes the shape of the cortex, including convexity and concavity. In \cite{fischl_2000},
     curvature is derived directly from the second derivative of the surface, which can be obtained using numerical
@@ -524,8 +526,8 @@ thickness and cognitive test performance, while VBM did not. This indicates a hi
 structure analysis.
 
 Furthermore, study \cite{friston_2004} demonstrated that the accuracy of VBM is highly dependent on the quality of
-spatial normalization and smoothing. Errors at these stages can blur local changes and reduce spatial precision, which
-limits the reliability of VBM-based findings.
+spatial normalization and smoothing \cite{han_2006}. Errors at these stages can blur local changes and reduce spatial
+precision, which limits the reliability of VBM-based findings.
 
 Lastly, the review study \cite{goto_2022} shows that SBM is more accurate in measuring cortical thickness and
 gyrification, whereas VBM may be more effective for assessing subcortical and global volumetric changes. The authors
